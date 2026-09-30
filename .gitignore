@@ -1,0 +1,51 @@
+# Build output
+build/
+out/
+.gradle/
+.kotlin/
+*.class
+!backend/gradle/wrapper/gradle-wrapper.jar
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+!.vscode/extensions.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets — never commit (CLAUDE.md rule 11)
+.env
+*.env.local
+**/application-secrets.yml
+google-services.json
+*.keystore
+*.jks
+
+# Android
+android-app/local.properties
+android-app/app/release/
+
+# Python / ml
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+ml/data/*
+!ml/data/samples/
+!ml/data/README.md
+
+# Model artifacts (stored in object storage / GitHub Releases, §31)
+*.gguf
+*.onnx
+*.safetensors
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
