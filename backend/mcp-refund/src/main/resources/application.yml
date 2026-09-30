@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: mcp-refund
+  profiles:
+    default: local
+  threads:
+    virtual:
+      enabled: true
+
+server:
+  port: 8094
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

@@ -1,0 +1,6 @@
+spring:
+  ai:
+    ollama:
+      base-url: ${KHARCHA_OLLAMA_URL:http://localhost:11434}
+      chat:
+        model: ${KHARCHA_OLLAMA_MODEL:qwen2.5:1.5b}

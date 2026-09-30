@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: ${KHARCHA_DB_URL:jdbc:postgresql://localhost:5432/kharcha}
+    username: ${KHARCHA_DB_USER:kharcha}
+    password: ${KHARCHA_DB_PASSWORD:kharcha}
