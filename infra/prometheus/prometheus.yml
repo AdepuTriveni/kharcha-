@@ -1,0 +1,29 @@
+# Scrapes the Spring Boot apps running on the host (./gradlew :<app>:bootRun).
+# Ports must match server.port in each app's application.yml.
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: kharcha
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["host.docker.internal:8080"]
+        labels: { app: ingest-api }
+      - targets: ["host.docker.internal:8081"]
+        labels: { app: processor }
+      - targets: ["host.docker.internal:8082"]
+        labels: { app: insights }
+      - targets: ["host.docker.internal:8083"]
+        labels: { app: agents }
+      - targets: ["host.docker.internal:8084"]
+        labels: { app: notifier }
+      - targets: ["host.docker.internal:8085"]
+        labels: { app: refund-worker }
+      - targets: ["host.docker.internal:8091"]
+        labels: { app: mcp-finance }
+      - targets: ["host.docker.internal:8092"]
+        labels: { app: mcp-memory }
+      - targets: ["host.docker.internal:8093"]
+        labels: { app: mcp-notify }
+      - targets: ["host.docker.internal:8094"]
+        labels: { app: mcp-refund }
